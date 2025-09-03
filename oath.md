@@ -1,4 +1,5 @@
 CSRF and the state Parameter   
+In OAuth flows, one common security issue is Cross-Site Request Forgery.
 A Cross-Site Request Forgery can happen when a user is tricked into clicking a link that starts a login process without meaning to. An attacker could use this to get an authorization code and access the user’s account.
 For example, a user might be logged into a website and receive a seemingly harmless link in an email or message, which secretly initiates the OAuth login flow. 
 If the application does not verify the request, the attacker could gain access to sensitive information or perform actions as the user.
@@ -21,4 +22,6 @@ Tokens need to be protected from theft, properly expired when no longer needed, 
 The development team must also monitor for unusual activity to detect potential breaches.
 This is a trade-off between convenience and protection: making login simple for users while making sure sensitive data is safe. 
 It is like installing an easy-to-open door;convenient, but it must also be secured properly.
+
+In summary, CSRF risks can be mitigated by enforcing the state parameter, redirect URI attacks can be avoided with strict URI validation, and user experience gains must always be balanced against the application’s responsibility to protect sensitive data.
 
